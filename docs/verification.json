@@ -53,5 +53,11 @@
     "Codex authentication and live AI inference inside this container",
     "full 120-second viewer-rendered match inside Docker",
     "VNC client Japanese IME/clipboard behavior"
-  ]
+  ],
+  "public_clone": {
+    "tested_commit": "aa1e4b7",
+    "docker_build": true,
+    "unit_tests_passed": 273,
+    "private_files_required": false
+  }
 }
