@@ -1,0 +1,34 @@
+{
+  "robot_name": "tristar_large",
+  "model_file": "xrobocon_ppo_tristar_large_step.xml",
+  "trained_models": {
+    "step": "models/xrobocon_ppo_tristar_large_step.zip",
+    "flat": "models/xrobocon_ppo_tristar_large_flat.zip"
+  },
+  "physics": {
+    "base_size": "[0.24, 0.18, 0.06]",
+    "wheel_radius": 0.045,
+    "frame_radius": 0.15,
+    "mass": 6.0
+  },
+  "control": {
+    "action_space_dim": 4,
+    "max_torque": 30.0,
+    "max_speed": 1.2
+  },
+  "reward_params": {
+    "use_specialized_rewards": "True",
+    "frame_angle_weight": 2.0,
+    "target_frame_angle_near": 30.0,
+    "target_frame_angle_far": 0.0,
+    "distance_threshold": 0.5,
+    "height_gain_weight": 800.0,
+    "edge_approach_weight": 5.0,
+    "edge_height_tolerance": 0.05,
+    "z_velocity_penalty_weight": 5.0,
+    "frame_velocity_penalty_weight": 0.05,
+    "action_rate_penalty_weight": 0.1,
+    "pitch_reward_weight": 5.0,
+    "alignment_reward_weight": 2.0
+  }
+}

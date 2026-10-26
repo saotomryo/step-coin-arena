@@ -1,0 +1,9 @@
+{
+  "source": "xrobocon/assets/robot_passive_front_bogie_r18_steering.xml",
+  "source_sha256": "f8e346b8be8bca828dd96b5712645fdf6d7b94f006564325ca69e87bae50ace3",
+  "visual": "xrobocon/assets/visual/robot_front_bogie_r18_detailed.xml",
+  "visual_sha256": "10b6dd648caccfba5d1f82152c0964ffb24a3dff4a7bafed2b5899f0c66e3835",
+  "added_geometries": 599,
+  "kind": "visual_concept",
+  "physical_asset_modified": false
+}

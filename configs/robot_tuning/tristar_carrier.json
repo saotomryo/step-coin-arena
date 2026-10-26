@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "description": "3号機Tri-star専用。車輪6Nm・キャリア15Nmは比較中に固定。",
+  "drive": {
+    "kp": 0.8,
+    "ki": 0.8,
+    "kd": 0,
+    "steering_kp": 12,
+    "steering_kd": 0.8,
+    "steering_torque_limit": 2,
+    "frame_kp": 60,
+    "frame_kd": 3,
+    "frame_torque_limit": 15,
+    "turn_gain": 2.2
+  },
+  "motion": {
+    "baseline": {
+      "max_speed": 0.12,
+      "max_turn": 0.6,
+      "climb_speed": 0.12,
+      "align_turn": 0.6,
+      "acceleration": 0.3,
+      "turn_acceleration": 1.2,
+      "settle_time": 1.0
+    },
+    "safe": {
+      "max_speed": 0.1,
+      "max_turn": 0.25,
+      "climb_speed": 0.1,
+      "align_turn": 0.15,
+      "acceleration": 0.2,
+      "turn_acceleration": 0.7,
+      "settle_time": 1.2
+    },
+    "fast": {
+      "max_speed": 0.22,
+      "max_turn": 0.5,
+      "climb_speed": 0.14,
+      "align_turn": 0.3,
+      "acceleration": 0.35,
+      "turn_acceleration": 1.2,
+      "settle_time": 0.5
+    }
+  },
+  "locomotion": {
+    "kind": "tristar",
+    "carrier_rate": 0.3,
+    "trigger_distance": 0.42,
+    "stall_seconds": 1.5,
+    "wheel_speed": 0.04,
+    "max_cycles": 4,
+    "tracking_window": 0.45,
+    "clearance_distance": 0.75
+  }
+}

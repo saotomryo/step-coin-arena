@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "purpose": "reach central top through every existing field tier",
+  "field_surface_heights_m": [
+    0,
+    0.1,
+    0.35,
+    0.6
+  ],
+  "step_rises_m": [
+    0.1,
+    0.25,
+    0.25
+  ],
+  "required_max_step_m": 0.25,
+  "design_target_step_m": 0.3,
+  "preferred_lift_actuation": "passive",
+  "proof_gates": [
+    "continuous collision-free contact sequence",
+    "positive contact normal forces and friction feasibility",
+    "centre of mass projection inside support region with margin",
+    "fixed motor torque-speed capability throughout traversal",
+    "platform room to settle before next step"
+  ],
+  "validation_sequence": [
+    "quasistatic feasibility",
+    "flat driving",
+    "isolated 0.10m step",
+    "isolated 0.25m step",
+    "0.30m margin test",
+    "unchanged full field ascent"
+  ],
+  "status": "three-tier straight ascent simulated twice with passive front-bogie r18, 256-sided mesh field and wheel feedforward; turning and 30cm margin unresolved",
+  "verified_candidate": "configs/scenarios/passive_front_bogie_r18_flat.json"
+}

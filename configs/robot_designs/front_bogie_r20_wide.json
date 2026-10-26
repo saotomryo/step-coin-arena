@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "source": "../../xrobocon/assets/robot_passive_front_bogie_r18_steering.xml",
+  "target": "../../xrobocon/assets/robot_front_bogie_r20_wide.xml",
+  "wheel_radius": 0.2,
+  "rocker_lateral_offset": 0.135,
+  "base_geom_pos": [
+    0,
+    0,
+    -0.07
+  ],
+  "description": "2号機: 大径R20・左右各30mm拡幅・車体20mm低床化と車体重心の中央化。受動機構と質量予算8.9kg、車輪トルク上限6Nmを維持する仮設計。"
+}

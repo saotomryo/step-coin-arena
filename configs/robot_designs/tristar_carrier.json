@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "carrier_radius": 0.26,
+  "wheel_radius": 0.12,
+  "half_track": 0.29,
+  "base_mass": 4.0,
+  "wheel_mass": 0.4,
+  "base_pos": [
+    0.06,
+    0,
+    -0.08
+  ],
+  "description": "3号機。左右の3輪キャリアを能動回転して踏み替えるTri-star機構。車輪6Nm、キャリア15Nmは仮の固定設計値。",
+  "rear_casters": true,
+  "base_half_size": [
+    0.14,
+    0.1,
+    0.035
+  ],
+  "tail_pivot_x": -0.55
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "robot_type": "tristar",
+  "field": {"friction": 0.8, "tiers": []},
+  "coins": [],
+  "rules": {"time_limit": 180.0, "coin_radius": 0.2, "upper_tier_stay_time": 2.0}
+}

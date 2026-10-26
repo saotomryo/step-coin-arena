@@ -1,0 +1,22 @@
+{
+  "robot_name": "tristar",
+  "model_file": "xrobocon_ppo_tristar_step.xml",
+  "trained_models": {
+    "step": "models/xrobocon_ppo_tristar_step.zip",
+    "flat": "models/xrobocon_ppo_tristar_flat.zip"
+  },
+  "physics": {
+    "base_size": "[0.16, 0.12, 0.04]",
+    "wheel_radius": 0.03,
+    "frame_radius": 0.08,
+    "mass": 3.8
+  },
+  "control": {
+    "action_space_dim": 4,
+    "max_torque": 20.0,
+    "max_speed": 1.5
+  },
+  "reward_params": {
+    "use_specialized_rewards": "False"
+  }
+}

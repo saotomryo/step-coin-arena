@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-26",
+  "environment": {
+    "host": "Apple Silicon Mac",
+    "container": "Linux ARM64",
+    "ros2": "Jazzy",
+    "genesis": "1.4.3",
+    "codex_cli": "0.163.0-alpha.10.2"
+  },
+  "unit_tests": {
+    "passed": 273,
+    "failures": 0,
+    "errors": 0
+  },
+  "smoke": {
+    "ros2": true,
+    "qt": true,
+    "genesis_cpu": true
+  },
+  "desktop": {
+    "noVNC_host_http": 200,
+    "qt_setup_screenshot": true,
+    "qt_workshop_screenshot": true
+  },
+  "gui_match": {
+    "simulation_seconds": 0.3,
+    "checks_passed": 6
+  },
+  "full_match": {
+    "viewer": false,
+    "operator_panel": "browser",
+    "transport": "ROS2 DDS",
+    "simulation_seconds": 120,
+    "status": "finished",
+    "finish_reason": "time_limit",
+    "scores": {
+      "blue": 8,
+      "red": 9
+    },
+    "coins": {
+      "blue": 6,
+      "red": 6
+    },
+    "recoveries": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  "not_verified": [
+    "Linux amd64 runtime",
+    "Windows host runtime",
+    "Linux host runtime",
+    "Codex authentication and live AI inference inside this container",
+    "full 120-second viewer-rendered match inside Docker",
+    "VNC client Japanese IME/clipboard behavior"
+  ]
+}

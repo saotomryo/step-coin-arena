@@ -1,0 +1,52 @@
+<mujoco model="xrobocon_robot">
+  <compiler angle="degree" coordinate="local" inertiafromgeom="true"/>
+  <option timestep="0.002" gravity="0 0 -9.81"/>
+
+  <default>
+    <joint armature="0.01" damping="0.1"/>
+    <geom friction="0.8" solimp="0.9 0.95 0.001 0.5 2" solref="0.02 1"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0"/>
+  </default>
+
+  <worldbody>
+    <!-- Main Body (Cylinder) - 半径0.2m → 0.1m -->
+    <body name="base_link" pos="0 0 0.035">
+      <freejoint/>
+      <geom type="cylinder" size="0.1 0.025" rgba="0.2 0.2 0.8 1" mass="2.5"/>
+      
+      <!-- Visual Marker for Front -->
+      <geom type="box" pos="0.075 0 0.025" size="0.025 0.025 0.025" rgba="1 0 0 1" mass="0.05"/>
+
+      <!-- Left Wheel - 半径0.05m → 0.025m -->
+      <body name="left_wheel" pos="0 0.11 -0.01" zaxis="0 1 0">
+        <joint name="left_wheel_joint" type="hinge" axis="0 0 1" damping="0.05" armature="0.005"/>
+        <geom type="cylinder" size="0.025 0.01" rgba="0.1 0.1 0.1 1" mass="0.5" friction="1.0 0.005 0.0001"/>
+      </body>
+
+      <!-- Right Wheel -->
+      <body name="right_wheel" pos="0 -0.11 -0.01" zaxis="0 1 0">
+        <joint name="right_wheel_joint" type="hinge" axis="0 0 1" damping="0.05" armature="0.005"/>
+        <geom type="cylinder" size="0.025 0.01" rgba="0.1 0.1 0.1 1" mass="0.5" friction="1.0 0.005 0.0001"/>
+      </body>
+
+      <!-- Caster Wheels (Front/Back for stability) -->
+      <body name="front_caster" pos="0.09 0 -0.025">
+        <geom type="sphere" size="0.01" rgba="0.5 0.5 0.5 1" mass="0.05" friction="0.1"/>
+      </body>
+      <body name="back_caster" pos="-0.09 0 -0.025">
+        <geom type="sphere" size="0.01" rgba="0.5 0.5 0.5 1" mass="0.05" friction="0.1"/>
+      </body>
+
+      <!-- Camera -->
+      <body name="camera_link" pos="0.05 0 0.05">
+        <geom type="box" size="0.005 0.01 0.005" rgba="0 0 0 1"/>
+        <camera name="robot_camera" pos="0 0 0" euler="90 -90 0" fovy="60"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="left_motor" joint="left_wheel_joint" gear="50"/>
+    <motor name="right_motor" joint="right_wheel_joint" gear="50"/>
+  </actuator>
+</mujoco>

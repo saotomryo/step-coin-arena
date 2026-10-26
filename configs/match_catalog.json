@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "base_config": "competition_ros2.json",
+  "robots": {
+    "front_bogie_r18": {
+      "label": "受動ロッカー・ボギー R18",
+      "description": "現行の三段登坂確認済み機体",
+      "robot_type": "rocker_bogie",
+      "robot_asset": "../xrobocon/assets/robot_passive_front_bogie_r18_steering.xml",
+      "controls": [
+        "baseline",
+        "safe",
+        "fast"
+      ],
+      "strategies": [
+        "adaptive",
+        "fixed",
+        "codex_target",
+        "codex_plan"
+      ],
+      "visual_asset": "../xrobocon/assets/visual/robot_front_bogie_r18_detailed.xml",
+      "tuning_file": "robot_tuning/front_bogie_r18.json"
+    },
+    "component_r18": {
+      "label": "部品重量配分 R18（簡易）",
+      "description": "重量配分の比較試作。2段目の登坂は調整中。総重量・接触形状は従来通り。",
+      "robot_type": "rocker_bogie",
+      "robot_asset": "../xrobocon/assets/robot_component_r18.xml",
+      "controls": [
+        "baseline",
+        "safe",
+        "fast"
+      ],
+      "strategies": [
+        "adaptive",
+        "fixed",
+        "codex_target",
+        "codex_plan"
+      ],
+      "visual_asset": "../xrobocon/assets/visual/robot_component_r18_detailed.xml"
+    },
+    "component_r18_detailed": {
+      "label": "部品重量配分 R18（詳細・高負荷）",
+      "description": "重量配分の比較試作。2段目の登坂は調整中。総重量・接触形状は従来通り。",
+      "robot_type": "rocker_bogie",
+      "robot_asset": "../xrobocon/assets/visual/robot_component_r18_detailed.xml",
+      "controls": [
+        "baseline",
+        "safe",
+        "fast"
+      ],
+      "strategies": [
+        "adaptive",
+        "fixed",
+        "codex_target",
+        "codex_plan"
+      ],
+      "visual_asset": "../xrobocon/assets/visual/robot_component_r18_detailed.xml"
+    },
+    "front_bogie_r20_wide": {
+      "label": "2号機 低床ワイドR20",
+      "description": "大径・低床・拡幅。従来制御で診断三段登坂確認。safe/fastは調整中。",
+      "robot_type": "rocker_bogie",
+      "robot_asset": "../xrobocon/assets/robot_front_bogie_r20_wide.xml",
+      "controls": [
+        "baseline",
+        "safe",
+        "fast"
+      ],
+      "strategies": [
+        "adaptive",
+        "fixed",
+        "codex_target",
+        "codex_plan"
+      ],
+      "tuning_file": "robot_tuning/front_bogie_r20.json",
+      "recommended_control": "baseline"
+    },
+    "tristar_carrier": {
+      "label": "3号機 回転キャリアTri-star",
+      "description": "後部支持付きの能動3輪キャリア。基準設定で三段診断通過。",
+      "robot_type": "tristar_large",
+      "robot_asset": "../xrobocon/assets/robot_tristar_carrier.xml",
+      "controls": [
+        "baseline",
+        "safe",
+        "fast"
+      ],
+      "strategies": [
+        "adaptive",
+        "fixed",
+        "codex_target",
+        "codex_plan"
+      ],
+      "tuning_file": "robot_tuning/tristar_carrier.json",
+      "recommended_control": "baseline",
+      "control_labels": {
+        "baseline": "基準制御（キャリア駆動）",
+        "safe": "低速設定（調整用）",
+        "fast": "高速設定（調整用）"
+      }
+    }
+  },
+  "controls": {
+    "baseline": {
+      "label": "従来制御"
+    },
+    "safe": {
+      "label": "安全重視"
+    },
+    "fast": {
+      "label": "速度重視"
+    }
+  },
+  "strategies": {
+    "adaptive": {
+      "label": "取得状況で再計画・接近回避",
+      "description": "取得状況と残り時間から円弧経路を再計画",
+      "agent": {
+        "kind": "adaptive_tier",
+        "speed_fraction": 0.75,
+        "top_route": "arc",
+        "avoidance": {
+          "enabled": true
+        }
+      }
+    },
+    "fixed": {
+      "label": "固定経路（比較用）",
+      "description": "保存済みの色別経路。接近回避は使いません",
+      "agents": {
+        "self": {
+          "kind": "tier",
+          "tier_coin_ids": [
+            [
+              4,
+              3,
+              2,
+              1,
+              0
+            ],
+            [
+              12,
+              11,
+              10,
+              9
+            ],
+            [
+              16
+            ]
+          ],
+          "gate_angles": [
+            2.97910354437259,
+            2.792526803190927,
+            1.5707963267948966
+          ],
+          "max_speed": 0.12,
+          "max_turn": 0.3
+        },
+        "opponent": {
+          "kind": "tier",
+          "tier_coin_ids": [
+            [
+              5,
+              6,
+              7,
+              8
+            ],
+            [
+              13,
+              14,
+              15
+            ],
+            [
+              17
+            ]
+          ],
+          "gate_angles": [
+            -2.97910354437259,
+            3.490658503988659,
+            -1.5707963267948966
+          ],
+          "max_speed": 0.12,
+          "max_turn": 0.3
+        }
+      }
+    },
+    "codex_target": {
+      "label": "Codex：次のコインを選択",
+      "description": "Codexで目標コインを決定し、既存のルール経路で走行。推論待ちは停止（競技時計は進行）。",
+      "agent": {
+        "kind": "codex_tier",
+        "avoidance": {
+          "enabled": true
+        },
+        "selector": {
+          "timeout": 60,
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low"
+        }
+      }
+    },
+    "codex_plan": {
+      "label": "Codex：戦略・コイン列・停止条件",
+      "description": "AIの取得順序を継続実行し、指定条件で再計画。",
+      "agent": {
+        "kind": "strategic_tier",
+        "avoidance": {
+          "enabled": true
+        },
+        "selector": {
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "timeout": 60
+        }
+      }
+    }
+  },
+  "defaults": {
+    "self": {
+      "robot": "front_bogie_r18",
+      "control": "fast",
+      "strategy": "adaptive"
+    },
+    "opponent": {
+      "robot": "front_bogie_r18",
+      "control": "fast",
+      "strategy": "adaptive"
+    }
+  }
+}

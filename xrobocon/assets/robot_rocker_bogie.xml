@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<mujoco model="rocker_bogie_robot">
+  <compiler angle="degree" coordinate="local" inertiafromgeom="true"/>
+  <option timestep="0.002" gravity="0 0 -9.81"/>
+
+  <default>
+    <joint armature="0.01" damping="0.5"/>
+    <geom friction="1.5" solimp="0.9 0.95 0.001 0.5 2" solref="0.02 1"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0"/>
+  </default>
+
+  <worldbody>
+    <body name="base_link" pos="0 0 0.15">
+      <freejoint/>
+      <geom type="box" size="0.15 0.08 0.04" rgba="0.8 0.5 0.2 1" mass="4.0"/>
+      <geom type="box" pos="0.12 0 0.04" size="0.02 0.02 0.02" rgba="1 0 0 1" mass="0.01"/>
+
+      <body name="left_rocker" pos="-0.05 0.13 0">
+        <joint name="left_rocker_joint" type="hinge" axis="0 1 0" range="-30 30" damping="2.0"/>
+        <geom type="box" size="0.10 0.01 0.01" rgba="0.5 0.5 0.5 1" mass="0.5"/>
+        
+        <body name="left_wheel_rear" pos="-0.15 0.02 -0.05" zaxis="0 1 0">
+          <joint name="left_wheel_rear_joint" type="hinge" axis="0 0 1"/>
+          <geom type="cylinder" size="0.06 0.025" rgba="0.1 0.1 0.1 1" mass="0.5" friction="2.0"/>
+        </body>
+
+        <body name="left_bogie" pos="0.10 0 -0.02">
+          <joint name="left_bogie_joint" type="hinge" axis="0 1 0" range="-45 45" damping="1.0"/>
+          <geom type="box" size="0.08 0.01 0.01" rgba="0.6 0.6 0.6 1" mass="0.3"/>
+
+          <body name="left_wheel_middle" pos="-0.08 0.02 -0.05" zaxis="0 1 0">
+            <joint name="left_wheel_middle_joint" type="hinge" axis="0 0 1"/>
+            <geom type="cylinder" size="0.06 0.025" rgba="0.1 0.1 0.1 1" mass="0.5" friction="2.0"/>
+          </body>
+
+          <body name="left_wheel_front" pos="0.08 0.02 -0.05" zaxis="0 1 0">
+            <joint name="left_wheel_front_joint" type="hinge" axis="0 0 1"/>
+            <geom type="cylinder" size="0.06 0.025" rgba="0.1 0.1 0.1 1" mass="0.5" friction="2.0"/>
+          </body>
+        </body>
+      </body>
+
+      <body name="right_rocker" pos="-0.05 -0.13 0">
+        <joint name="right_rocker_joint" type="hinge" axis="0 1 0" range="-30 30" damping="2.0"/>
+        <geom type="box" size="0.10 0.01 0.01" rgba="0.5 0.5 0.5 1" mass="0.5"/>
+        
+        <body name="right_wheel_rear" pos="-0.15 -0.02 -0.05" zaxis="0 1 0">
+          <joint name="right_wheel_rear_joint" type="hinge" axis="0 0 1"/>
+          <geom type="cylinder" size="0.06 0.025" rgba="0.1 0.1 0.1 1" mass="0.5" friction="2.0"/>
+        </body>
+
+        <body name="right_bogie" pos="0.10 0 -0.02">
+          <joint name="right_bogie_joint" type="hinge" axis="0 1 0" range="-45 45" damping="1.0"/>
+          <geom type="box" size="0.08 0.01 0.01" rgba="0.6 0.6 0.6 1" mass="0.3"/>
+
+          <body name="right_wheel_middle" pos="-0.08 -0.02 -0.05" zaxis="0 1 0">
+            <joint name="right_wheel_middle_joint" type="hinge" axis="0 0 1"/>
+            <geom type="cylinder" size="0.06 0.025" rgba="0.1 0.1 0.1 1" mass="0.5" friction="2.0"/>
+          </body>
+
+          <body name="right_wheel_front" pos="0.08 -0.02 -0.05" zaxis="0 1 0">
+            <joint name="right_wheel_front_joint" type="hinge" axis="0 0 1"/>
+            <geom type="cylinder" size="0.06 0.025" rgba="0.1 0.1 0.1 1" mass="0.5" friction="2.0"/>
+          </body>
+        </body>
+      </body>
+
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="fl_motor" joint="left_wheel_front_joint" gear="60"/>
+    <motor name="ml_motor" joint="left_wheel_middle_joint" gear="60"/>
+    <motor name="rl_motor" joint="left_wheel_rear_joint" gear="60"/>
+    
+    <motor name="fr_motor" joint="right_wheel_front_joint" gear="60"/>
+    <motor name="mr_motor" joint="right_wheel_middle_joint" gear="60"/>
+    <motor name="rr_motor" joint="right_wheel_rear_joint" gear="60"/>
+  </actuator>
+</mujoco>

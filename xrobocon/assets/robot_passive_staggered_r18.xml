@@ -1,0 +1,56 @@
+<mujoco model="passive_staggered_r18">
+  <compiler angle="degree" inertiafromgeom="true" />
+  <default>
+    <joint damping="0.1" armature="0.01" />
+    <geom friction="0.8" />
+  </default>
+  <worldbody>
+    <body name="base_link" pos="0 0 0.2">
+      <freejoint />
+      <geom type="box" size=".12 .075 .035" mass="4" rgba="0.8 0.5 0.2 1" pos="-.14 0 -.025" />
+      <body name="left_rocker" pos="0 0.105 0">
+        <joint name="left_rocker_joint" type="hinge" axis="0 1 0" limited="true" range="-50 50" />
+        <geom type="capsule" fromto="-.13 0 -.04 .26 0 -.10" size=".008" mass=".5" />
+        <body name="left_bogie" pos="-.13 0 -.04">
+          <joint name="left_bogie_joint" type="hinge" axis="0 1 0" limited="true" range="-5 50" />
+          <geom type="capsule" fromto="-.13 0 -.06 .13 0 -.06" size=".008" mass=".3" />
+          <body name="left_wheel_middle" pos="0.13 0.035 -.06" zaxis="0 1 0">
+            <joint name="left_wheel_middle_joint" type="hinge" axis="0 0 1" />
+            <geom type="cylinder" size=".18 .025" mass=".5" rgba=".1 .1 .1 1" />
+          </body>
+          <body name="left_wheel_rear" pos="-0.13 0.135 -.06" zaxis="0 1 0">
+            <joint name="left_wheel_rear_joint" type="hinge" axis="0 0 1" />
+            <geom type="cylinder" size=".18 .025" mass=".5" rgba=".1 .1 .1 1" />
+          </body>
+        </body>
+        <body name="left_wheel_front" pos="0.26 0.135 -.10" zaxis="0 1 0">
+          <joint name="left_wheel_front_joint" type="hinge" axis="0 0 1" />
+          <geom type="cylinder" size=".18 .025" mass=".5" rgba=".1 .1 .1 1" />
+        </body>
+      </body>
+      <body name="right_rocker" pos="0 -0.105 0">
+        <joint name="right_rocker_joint" type="hinge" axis="0 1 0" limited="true" range="-50 50" />
+        <geom type="capsule" fromto="-.13 0 -.04 .26 0 -.10" size=".008" mass=".5" />
+        <body name="right_bogie" pos="-.13 0 -.04">
+          <joint name="right_bogie_joint" type="hinge" axis="0 1 0" limited="true" range="-5 50" />
+          <geom type="capsule" fromto="-.13 0 -.06 .13 0 -.06" size=".008" mass=".3" />
+          <body name="right_wheel_middle" pos="0.13 -0.035 -.06" zaxis="0 1 0">
+            <joint name="right_wheel_middle_joint" type="hinge" axis="0 0 1" />
+            <geom type="cylinder" size=".18 .025" mass=".5" rgba=".1 .1 .1 1" />
+          </body>
+          <body name="right_wheel_rear" pos="-0.13 -0.135 -.06" zaxis="0 1 0">
+            <joint name="right_wheel_rear_joint" type="hinge" axis="0 0 1" />
+            <geom type="cylinder" size=".18 .025" mass=".5" rgba=".1 .1 .1 1" />
+          </body>
+        </body>
+        <body name="right_wheel_front" pos="0.26 -0.135 -.10" zaxis="0 1 0">
+          <joint name="right_wheel_front_joint" type="hinge" axis="0 0 1" />
+          <geom type="cylinder" size=".18 .025" mass=".5" rgba=".1 .1 .1 1" />
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="passive_differential" joint1="left_rocker_joint" joint2="right_rocker_joint" polycoef="0 -1 0 0 0" solref=".02 1" />
+  </equality>
+</mujoco>

@@ -1,0 +1,28 @@
+name: step-coin-arena
+services:
+  simulator:
+    image: step-coin-arena:local
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        CODEX_VERSION: ${CODEX_VERSION:-0.163.0-alpha.10.2}
+    ports:
+      - "127.0.0.1:${ROBOT_DESKTOP_PORT:-6080}:6080"
+      - "127.0.0.1:${ROBOT_VNC_PORT:-5900}:5900"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:6080/vnc.html', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+    shm_size: 1gb
+    volumes:
+      - resources:/data
+      - codex-auth:/home/robot/.codex
+    environment:
+      XROBOCON_RESOURCE_ROOT: /data
+      XROBOCON_ROS2_RUNTIME: system
+volumes:
+  resources:
+  codex-auth:

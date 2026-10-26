@@ -1,0 +1,1 @@
+2026-10-14の速度改善前の三段制御を保存した比較用基準。既存のnavigation/coin_routesを利用する。通常はcontrol_profile=baselineで従来値を使う。

@@ -1,0 +1,19 @@
+{
+  "robot_name": "standard",
+  "model_file": "xrobocon_ppo_standard_step.xml",
+  "trained_models": [
+    "models/xrobocon_ppo_standard_step.zip",
+    "models/xrobocon_ppo_standard_flat.zip"
+  ],
+  "physics": {
+    "base_radius": 0.1,
+    "wheel_radius": 0.025,
+    "mass": 3.5
+  },
+  "control": {
+    "action_space_dim": 2,
+    "max_torque": 20.0,
+    "max_speed": 2.0
+  },
+  "reward_params": {}
+}

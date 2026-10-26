@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "robot_type": "rocker_bogie",
+  "field": {
+    "friction": 0.8,
+    "tiers": []
+  },
+  "coins": [],
+  "rules": {
+    "time_limit": 180.0,
+    "coin_radius": 0.2,
+    "upper_tier_stay_time": 2.0
+  },
+  "robot_asset": "../../xrobocon/assets/robot_passive_staggered_r18.xml"
+}

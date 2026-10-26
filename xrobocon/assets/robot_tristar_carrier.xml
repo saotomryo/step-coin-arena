@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="tristar_active_carrier">
+  <compiler angle="degree" inertiafromgeom="true" />
+  <default>
+    <joint damping=".1" armature=".01" />
+    <geom friction=".8" />
+  </default>
+  <worldbody>
+    <body name="base_link" pos="0 0 .4">
+      <freejoint />
+      <geom type="box" size="0.14 0.1 0.035" pos="0.06 0 -0.08" mass="4.0" rgba=".65 .25 .85 1" />
+      <body name="left_tristar" pos="0 0.29 0">
+        <joint name="left_tristar_joint" type="hinge" axis="0 1 0" damping=".2" />
+        <geom type="cylinder" size=".035 .025" zaxis="0 1 0" mass=".3" rgba=".7 .3 .9 1" />
+        <geom type="capsule" fromto="0 0 0 0.22516660498395405 0 -0.13" size=".012" mass=".1" rgba=".65 .65 .7 1" />
+        <body name="left_wheel_1" pos="0.22516660498395405 0 -0.13" zaxis="0 1 0">
+          <joint name="left_wheel_1_joint" type="hinge" axis="0 0 1" damping=".02" />
+          <geom type="cylinder" size="0.12 .025" mass="0.4" rgba=".1 .1 .1 1" />
+        </body>
+        <geom type="capsule" fromto="0 0 0 -0.22516660498395405 0 -0.13" size=".012" mass=".1" rgba=".65 .65 .7 1" />
+        <body name="left_wheel_2" pos="-0.22516660498395405 0 -0.13" zaxis="0 1 0">
+          <joint name="left_wheel_2_joint" type="hinge" axis="0 0 1" damping=".02" />
+          <geom type="cylinder" size="0.12 .025" mass="0.4" rgba=".1 .1 .1 1" />
+        </body>
+        <geom type="capsule" fromto="0 0 0 0 0 0.26" size=".012" mass=".1" rgba=".65 .65 .7 1" />
+        <body name="left_wheel_3" pos="0 0 0.26" zaxis="0 1 0">
+          <joint name="left_wheel_3_joint" type="hinge" axis="0 0 1" damping=".02" />
+          <geom type="cylinder" size="0.12 .025" mass="0.4" rgba=".1 .1 .1 1" />
+        </body>
+      </body>
+      <body name="right_tristar" pos="0 -0.29 0">
+        <joint name="right_tristar_joint" type="hinge" axis="0 1 0" damping=".2" />
+        <geom type="cylinder" size=".035 .025" zaxis="0 1 0" mass=".3" rgba=".7 .3 .9 1" />
+        <geom type="capsule" fromto="0 0 0 0.22516660498395405 0 -0.13" size=".012" mass=".1" rgba=".65 .65 .7 1" />
+        <body name="right_wheel_1" pos="0.22516660498395405 0 -0.13" zaxis="0 1 0">
+          <joint name="right_wheel_1_joint" type="hinge" axis="0 0 1" damping=".02" />
+          <geom type="cylinder" size="0.12 .025" mass="0.4" rgba=".1 .1 .1 1" />
+        </body>
+        <geom type="capsule" fromto="0 0 0 -0.22516660498395405 0 -0.13" size=".012" mass=".1" rgba=".65 .65 .7 1" />
+        <body name="right_wheel_2" pos="-0.22516660498395405 0 -0.13" zaxis="0 1 0">
+          <joint name="right_wheel_2_joint" type="hinge" axis="0 0 1" damping=".02" />
+          <geom type="cylinder" size="0.12 .025" mass="0.4" rgba=".1 .1 .1 1" />
+        </body>
+        <geom type="capsule" fromto="0 0 0 0 0 0.26" size=".012" mass=".1" rgba=".65 .65 .7 1" />
+        <body name="right_wheel_3" pos="0 0 0.26" zaxis="0 1 0">
+          <joint name="right_wheel_3_joint" type="hinge" axis="0 0 1" damping=".02" />
+          <geom type="cylinder" size="0.12 .025" mass="0.4" rgba=".1 .1 .1 1" />
+        </body>
+      </body>
+      <geom name="tail_beam_0" type="capsule" fromto="-.08 -0.1 -.06 -0.55 -0.1 -.08" size=".012" mass="0" contype="0" conaffinity="0" group="2" rgba=".55 .55 .6 1" />
+      <body name="tail_caster_0" pos="-0.55 -0.1 -.08">
+        <joint name="tail_swivel_0" axis="0 0 1" damping=".01" armature=".001" />
+        <geom type="capsule" fromto="0 0 0 -.035 0 -.07" size=".006" mass=".05" rgba=".6 .6 .65 1" />
+        <body name="tail_wheel_0" pos="-.035 0 -.07" zaxis="0 1 0">
+          <joint name="tail_roll_0" axis="0 0 1" damping=".005" armature=".001" />
+          <geom type="cylinder" size=".10 .02" mass=".15" rgba=".15 .15 .15 1" />
+        </body>
+      </body>
+      <geom name="tail_beam_1" type="capsule" fromto="-.08 0.1 -.06 -0.55 0.1 -.08" size=".012" mass="0" contype="0" conaffinity="0" group="2" rgba=".55 .55 .6 1" />
+      <body name="tail_caster_1" pos="-0.55 0.1 -.08">
+        <joint name="tail_swivel_1" axis="0 0 1" damping=".01" armature=".001" />
+        <geom type="capsule" fromto="0 0 0 -.035 0 -.07" size=".006" mass=".05" rgba=".6 .6 .65 1" />
+        <body name="tail_wheel_1" pos="-.035 0 -.07" zaxis="0 1 0">
+          <joint name="tail_roll_1" axis="0 0 1" damping=".005" armature=".001" />
+          <geom type="cylinder" size=".10 .02" mass=".15" rgba=".15 .15 .15 1" />
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

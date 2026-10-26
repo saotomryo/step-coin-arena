@@ -1,0 +1,15 @@
+{
+  "time_limit": 8,
+  "participants": ["self", "opponent"],
+  "coins": [
+    {"id": "repeat", "pos": [0, 0, 0.1], "tier": 3, "points": 1, "respawn_delay": 2},
+    {"id": "delayed", "pos": [1, 0, 0.35], "tier": 2, "points": 2, "spawn_at": 3, "dwell": 0.5}
+  ],
+  "position_samples": [
+    {"from": 0, "positions": {"self": [0, 0, 0.1]}},
+    {"from": 0.5, "positions": {}},
+    {"from": 2.2, "positions": {"opponent": [0, 0, 0.1]}},
+    {"from": 2.5, "positions": {"self": [1, 0, 0.35]}},
+    {"from": 4, "positions": {}}
+  ]
+}

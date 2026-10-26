@@ -1,0 +1,23 @@
+{
+  "robot_name": "rocker_bogie",
+  "model_file": "xrobocon_ppo_rocker_bogie_step.xml",
+  "trained_models": [
+    "xrobocon_ppo_rocker_bogie_step.zip",
+    "models/bogie_step20251204.zip",
+    "models/rocker_bogie_step100000.zip",
+    "models/rocker_bofie_step_hard100000.zip"
+  ],
+  "physics": {
+    "base_size": "[0.3, 0.2, 0.08]",
+    "wheel_radius": 0.06,
+    "mass": 7.0
+  },
+  "control": {
+    "action_space_dim": 2,
+    "max_torque": 40.0,
+    "max_speed": 1.0
+  },
+  "reward_params": {
+    "use_specialized_rewards": "False"
+  }
+}

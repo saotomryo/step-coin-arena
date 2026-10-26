@@ -1,0 +1,697 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="front_bogie_r18_visual_concept">
+  <compiler angle="degree" inertiafromgeom="true" />
+  <default>
+    <joint damping="0.1" armature="0.01" />
+    <geom friction="0.8" />
+  </default>
+  <worldbody>
+    <body name="base_link" pos="0 0 0.2">
+      <freejoint />
+      <geom type="box" size=".12 .075 .035" mass="4" rgba="0.8 0.5 0.2 1" pos="-.03 0 -.05" />
+      <body name="left_rocker" pos="0 0.105 0">
+        <joint name="left_rocker_joint" type="hinge" axis="0 1 0" limited="true" range="-50 50" />
+        <geom type="capsule" fromto="-.26 0 -.10 .13 0 -.04" size=".008" mass=".5" />
+        <body name="left_bogie" pos=".13 0 -.04">
+          <joint name="left_bogie_joint" type="hinge" axis="0 1 0" limited="true" range="-50 50" />
+          <geom type="capsule" fromto="-.13 0 -.06 .13 0 -.06" size=".008" mass=".3" />
+          <body name="left_wheel_middle_steering" pos="-0.13 0.035 -0.06">
+            <joint name="left_wheel_middle_steering_joint" type="hinge" axis="0 0 1" range="-95 95" damping=".2" armature=".01" />
+            <body name="left_wheel_middle" pos="0 0 0" zaxis="0 1 0">
+              <joint name="left_wheel_middle_joint" type="hinge" axis="0 0 1" />
+              <geom type="cylinder" size=".18 .025" mass=".5" rgba=".075 .085 .095 1" />
+              <geom name="visual_0166" type="cylinder" size="0.108 0.003" pos="0 0 -0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0167" type="cylinder" size="0.081 0.004" pos="0 0 -0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0168" type="cylinder" size="0.031 0.007" pos="0 0 -0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0169" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0170" type="cylinder" size="0.004 0.003" pos="0.045 0.0 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0171" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0172" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0173" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0174" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0175" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0176" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0177" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0178" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0179" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0180" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0181" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0182" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0183" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0184" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0185" type="cylinder" size="0.012 0.003" pos="0 0 -0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0186" type="cylinder" size="0.108 0.003" pos="0 0 0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0187" type="cylinder" size="0.081 0.004" pos="0 0 0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0188" type="cylinder" size="0.031 0.007" pos="0 0 0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0189" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0190" type="cylinder" size="0.004 0.003" pos="0.045 0.0 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0191" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0192" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0193" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0194" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0195" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0196" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0197" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0198" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0199" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0200" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0201" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0202" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0203" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0204" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0205" type="cylinder" size="0.012 0.003" pos="0 0 0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0206" type="box" size="0.006 0.011 0.028" pos="0.179 0.0 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0207" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 0.028001769242201324 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 9.0" />
+              <geom name="visual_0208" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 0.055314041993115584 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 18.0" />
+              <geom name="visual_0209" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 0.08126429945337887 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 27.0" />
+              <geom name="visual_0210" type="box" size="0.006 0.011 0.028" pos="0.1448140419931156 0.10521356016035269 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 36.0" />
+              <geom name="visual_0211" type="box" size="0.006 0.011 0.028" pos="0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0212" type="box" size="0.006 0.011 0.028" pos="0.10521356016035269 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 54.0" />
+              <geom name="visual_0213" type="box" size="0.006 0.011 0.028" pos="0.08126429945337889 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 63.0" />
+              <geom name="visual_0214" type="box" size="0.006 0.011 0.028" pos="0.05531404199311559 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 72.0" />
+              <geom name="visual_0215" type="box" size="0.006 0.011 0.028" pos="0.028001769242201335 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 81.0" />
+              <geom name="visual_0216" type="box" size="0.006 0.011 0.028" pos="1.096058885236881e-17 0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0217" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201276 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 98.99999999999999" />
+              <geom name="visual_0218" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311557 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 108.0" />
+              <geom name="visual_0219" type="box" size="0.006 0.011 0.028" pos="-0.08126429945337886 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 117.0" />
+              <geom name="visual_0220" type="box" size="0.006 0.011 0.028" pos="-0.10521356016035267 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 126.0" />
+              <geom name="visual_0221" type="box" size="0.006 0.011 0.028" pos="-0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0222" type="box" size="0.006 0.011 0.028" pos="-0.14481404199311557 0.1052135601603527 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 144.0" />
+              <geom name="visual_0223" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 0.08126429945337889 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 153.0" />
+              <geom name="visual_0224" type="box" size="0.006 0.011 0.028" pos="-0.17023911641683248 0.0553140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 162.0" />
+              <geom name="visual_0225" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 0.028001769242201345 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 171.0" />
+              <geom name="visual_0226" type="box" size="0.006 0.011 0.028" pos="-0.179 2.192117770473762e-17 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0227" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 -0.0280017692422013 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 189.0" />
+              <geom name="visual_0228" type="box" size="0.006 0.011 0.028" pos="-0.1702391164168325 -0.055314041993115494 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 197.99999999999997" />
+              <geom name="visual_0229" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 -0.08126429945337886 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 207.0" />
+              <geom name="visual_0230" type="box" size="0.006 0.011 0.028" pos="-0.1448140419931156 -0.10521356016035267 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 216.0" />
+              <geom name="visual_0231" type="box" size="0.006 0.011 0.028" pos="-0.12657211383239203 -0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0232" type="box" size="0.006 0.011 0.028" pos="-0.1052135601603527 -0.14481404199311557 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 234.0" />
+              <geom name="visual_0233" type="box" size="0.006 0.011 0.028" pos="-0.0812642994533789 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 243.0" />
+              <geom name="visual_0234" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311561 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 252.0" />
+              <geom name="visual_0235" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201355 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 261.0" />
+              <geom name="visual_0236" type="box" size="0.006 0.011 0.028" pos="-3.288176655710643e-17 -0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0237" type="box" size="0.006 0.011 0.028" pos="0.02800176924220129 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 279.0" />
+              <geom name="visual_0238" type="box" size="0.006 0.011 0.028" pos="0.05531404199311555 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 288.0" />
+              <geom name="visual_0239" type="box" size="0.006 0.011 0.028" pos="0.08126429945337885 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 297.0" />
+              <geom name="visual_0240" type="box" size="0.006 0.011 0.028" pos="0.10521356016035265 -0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 306.0" />
+              <geom name="visual_0241" type="box" size="0.006 0.011 0.028" pos="0.12657211383239197 -0.12657211383239203 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0242" type="box" size="0.006 0.011 0.028" pos="0.14481404199311557 -0.10521356016035273 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 324.0" />
+              <geom name="visual_0243" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 -0.0812642994533789 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 333.0" />
+              <geom name="visual_0244" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 -0.05531404199311563 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 342.0" />
+              <geom name="visual_0245" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 -0.02800176924220137 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 351.0" />
+            </body>
+            <inertial pos="0 0 0" mass=".05" diaginertia=".0002 .0002 .0002" />
+            <geom name="visual_0160" type="box" size="0.026 0.021 0.015" pos="0 -0.034 0.02" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0161" type="cylinder" size="0.017 0.023" pos="0 -0.03 -0.004" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0162" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.022 -0.026 0.015 -0.022 0 0" />
+            <geom name="visual_0163" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="0.022 -0.026 0.015 0.022 0 0" />
+            <geom name="visual_0164" type="cylinder" size="0.025 0.027" pos="0 -0.058 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0165" type="cylinder" size="0.027 0.009" pos="0 -0.025 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          </body>
+          <body name="left_wheel_front_steering" pos="0.13 0.135 -0.06">
+            <joint name="left_wheel_front_steering_joint" type="hinge" axis="0 0 1" range="-95 95" damping=".2" armature=".01" />
+            <body name="left_wheel_front" pos="0 0 0" zaxis="0 1 0">
+              <joint name="left_wheel_front_joint" type="hinge" axis="0 0 1" />
+              <geom type="cylinder" size=".18 .025" mass=".5" rgba=".075 .085 .095 1" />
+              <geom name="visual_0080" type="cylinder" size="0.108 0.003" pos="0 0 -0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0081" type="cylinder" size="0.081 0.004" pos="0 0 -0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0082" type="cylinder" size="0.031 0.007" pos="0 0 -0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0083" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0084" type="cylinder" size="0.004 0.003" pos="0.045 0.0 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0085" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0086" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0087" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0088" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0089" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0090" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0091" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0092" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0093" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0094" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0095" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0096" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0097" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0098" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0099" type="cylinder" size="0.012 0.003" pos="0 0 -0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0100" type="cylinder" size="0.108 0.003" pos="0 0 0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0101" type="cylinder" size="0.081 0.004" pos="0 0 0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0102" type="cylinder" size="0.031 0.007" pos="0 0 0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0103" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0104" type="cylinder" size="0.004 0.003" pos="0.045 0.0 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0105" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0106" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0107" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0108" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0109" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0110" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0111" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0112" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0113" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0114" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0115" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0116" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0117" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0118" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0119" type="cylinder" size="0.012 0.003" pos="0 0 0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0120" type="box" size="0.006 0.011 0.028" pos="0.179 0.0 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0121" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 0.028001769242201324 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 9.0" />
+              <geom name="visual_0122" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 0.055314041993115584 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 18.0" />
+              <geom name="visual_0123" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 0.08126429945337887 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 27.0" />
+              <geom name="visual_0124" type="box" size="0.006 0.011 0.028" pos="0.1448140419931156 0.10521356016035269 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 36.0" />
+              <geom name="visual_0125" type="box" size="0.006 0.011 0.028" pos="0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0126" type="box" size="0.006 0.011 0.028" pos="0.10521356016035269 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 54.0" />
+              <geom name="visual_0127" type="box" size="0.006 0.011 0.028" pos="0.08126429945337889 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 63.0" />
+              <geom name="visual_0128" type="box" size="0.006 0.011 0.028" pos="0.05531404199311559 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 72.0" />
+              <geom name="visual_0129" type="box" size="0.006 0.011 0.028" pos="0.028001769242201335 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 81.0" />
+              <geom name="visual_0130" type="box" size="0.006 0.011 0.028" pos="1.096058885236881e-17 0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0131" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201276 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 98.99999999999999" />
+              <geom name="visual_0132" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311557 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 108.0" />
+              <geom name="visual_0133" type="box" size="0.006 0.011 0.028" pos="-0.08126429945337886 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 117.0" />
+              <geom name="visual_0134" type="box" size="0.006 0.011 0.028" pos="-0.10521356016035267 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 126.0" />
+              <geom name="visual_0135" type="box" size="0.006 0.011 0.028" pos="-0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0136" type="box" size="0.006 0.011 0.028" pos="-0.14481404199311557 0.1052135601603527 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 144.0" />
+              <geom name="visual_0137" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 0.08126429945337889 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 153.0" />
+              <geom name="visual_0138" type="box" size="0.006 0.011 0.028" pos="-0.17023911641683248 0.0553140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 162.0" />
+              <geom name="visual_0139" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 0.028001769242201345 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 171.0" />
+              <geom name="visual_0140" type="box" size="0.006 0.011 0.028" pos="-0.179 2.192117770473762e-17 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0141" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 -0.0280017692422013 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 189.0" />
+              <geom name="visual_0142" type="box" size="0.006 0.011 0.028" pos="-0.1702391164168325 -0.055314041993115494 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 197.99999999999997" />
+              <geom name="visual_0143" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 -0.08126429945337886 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 207.0" />
+              <geom name="visual_0144" type="box" size="0.006 0.011 0.028" pos="-0.1448140419931156 -0.10521356016035267 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 216.0" />
+              <geom name="visual_0145" type="box" size="0.006 0.011 0.028" pos="-0.12657211383239203 -0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0146" type="box" size="0.006 0.011 0.028" pos="-0.1052135601603527 -0.14481404199311557 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 234.0" />
+              <geom name="visual_0147" type="box" size="0.006 0.011 0.028" pos="-0.0812642994533789 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 243.0" />
+              <geom name="visual_0148" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311561 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 252.0" />
+              <geom name="visual_0149" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201355 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 261.0" />
+              <geom name="visual_0150" type="box" size="0.006 0.011 0.028" pos="-3.288176655710643e-17 -0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0151" type="box" size="0.006 0.011 0.028" pos="0.02800176924220129 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 279.0" />
+              <geom name="visual_0152" type="box" size="0.006 0.011 0.028" pos="0.05531404199311555 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 288.0" />
+              <geom name="visual_0153" type="box" size="0.006 0.011 0.028" pos="0.08126429945337885 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 297.0" />
+              <geom name="visual_0154" type="box" size="0.006 0.011 0.028" pos="0.10521356016035265 -0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 306.0" />
+              <geom name="visual_0155" type="box" size="0.006 0.011 0.028" pos="0.12657211383239197 -0.12657211383239203 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0156" type="box" size="0.006 0.011 0.028" pos="0.14481404199311557 -0.10521356016035273 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 324.0" />
+              <geom name="visual_0157" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 -0.0812642994533789 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 333.0" />
+              <geom name="visual_0158" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 -0.05531404199311563 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 342.0" />
+              <geom name="visual_0159" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 -0.02800176924220137 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 351.0" />
+            </body>
+            <inertial pos="0 0 0" mass=".05" diaginertia=".0002 .0002 .0002" />
+            <geom name="visual_0074" type="box" size="0.026 0.021 0.015" pos="0 -0.034 0.02" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0075" type="cylinder" size="0.017 0.023" pos="0 -0.03 -0.004" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0076" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.022 -0.026 0.015 -0.022 0 0" />
+            <geom name="visual_0077" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="0.022 -0.026 0.015 0.022 0 0" />
+            <geom name="visual_0078" type="cylinder" size="0.025 0.027" pos="0 -0.058 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0079" type="cylinder" size="0.027 0.009" pos="0 -0.025 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          </body>
+          <geom name="visual_0065" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.13 -0.008 -0.06 0.13 -0.008 -0.06" />
+          <geom name="visual_0067" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.13 0.008 -0.06 0.13 0.008 -0.06" />
+          <geom name="visual_0071" type="cylinder" size="0.025 0.011" pos="0 0.01 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0072" type="cylinder" size="0.015 0.014" pos="0 0.015 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0073" type="cylinder" size="0.007 0.003" pos="0 0.033 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        </body>
+        <body name="left_wheel_rear_steering" pos="-0.26 0.135 -0.1">
+          <joint name="left_wheel_rear_steering_joint" type="hinge" axis="0 0 1" range="-95 95" damping=".2" armature=".01" />
+          <body name="left_wheel_rear" pos="0 0 0" zaxis="0 1 0">
+            <joint name="left_wheel_rear_joint" type="hinge" axis="0 0 1" />
+            <geom type="cylinder" size=".18 .025" mass=".5" rgba=".075 .085 .095 1" />
+            <geom name="visual_0252" type="cylinder" size="0.108 0.003" pos="0 0 -0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0253" type="cylinder" size="0.081 0.004" pos="0 0 -0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0254" type="cylinder" size="0.031 0.007" pos="0 0 -0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0255" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+            <geom name="visual_0256" type="cylinder" size="0.004 0.003" pos="0.045 0.0 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0257" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+            <geom name="visual_0258" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0259" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+            <geom name="visual_0260" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0261" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+            <geom name="visual_0262" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0263" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+            <geom name="visual_0264" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0265" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+            <geom name="visual_0266" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0267" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+            <geom name="visual_0268" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0269" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+            <geom name="visual_0270" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0271" type="cylinder" size="0.012 0.003" pos="0 0 -0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0272" type="cylinder" size="0.108 0.003" pos="0 0 0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0273" type="cylinder" size="0.081 0.004" pos="0 0 0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0274" type="cylinder" size="0.031 0.007" pos="0 0 0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0275" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+            <geom name="visual_0276" type="cylinder" size="0.004 0.003" pos="0.045 0.0 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0277" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+            <geom name="visual_0278" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0279" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+            <geom name="visual_0280" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0281" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+            <geom name="visual_0282" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0283" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+            <geom name="visual_0284" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0285" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+            <geom name="visual_0286" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0287" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+            <geom name="visual_0288" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0289" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+            <geom name="visual_0290" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0291" type="cylinder" size="0.012 0.003" pos="0 0 0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0292" type="box" size="0.006 0.011 0.028" pos="0.179 0.0 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+            <geom name="visual_0293" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 0.028001769242201324 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 9.0" />
+            <geom name="visual_0294" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 0.055314041993115584 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 18.0" />
+            <geom name="visual_0295" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 0.08126429945337887 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 27.0" />
+            <geom name="visual_0296" type="box" size="0.006 0.011 0.028" pos="0.1448140419931156 0.10521356016035269 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 36.0" />
+            <geom name="visual_0297" type="box" size="0.006 0.011 0.028" pos="0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+            <geom name="visual_0298" type="box" size="0.006 0.011 0.028" pos="0.10521356016035269 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 54.0" />
+            <geom name="visual_0299" type="box" size="0.006 0.011 0.028" pos="0.08126429945337889 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 63.0" />
+            <geom name="visual_0300" type="box" size="0.006 0.011 0.028" pos="0.05531404199311559 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 72.0" />
+            <geom name="visual_0301" type="box" size="0.006 0.011 0.028" pos="0.028001769242201335 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 81.0" />
+            <geom name="visual_0302" type="box" size="0.006 0.011 0.028" pos="1.096058885236881e-17 0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+            <geom name="visual_0303" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201276 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 98.99999999999999" />
+            <geom name="visual_0304" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311557 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 108.0" />
+            <geom name="visual_0305" type="box" size="0.006 0.011 0.028" pos="-0.08126429945337886 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 117.0" />
+            <geom name="visual_0306" type="box" size="0.006 0.011 0.028" pos="-0.10521356016035267 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 126.0" />
+            <geom name="visual_0307" type="box" size="0.006 0.011 0.028" pos="-0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+            <geom name="visual_0308" type="box" size="0.006 0.011 0.028" pos="-0.14481404199311557 0.1052135601603527 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 144.0" />
+            <geom name="visual_0309" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 0.08126429945337889 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 153.0" />
+            <geom name="visual_0310" type="box" size="0.006 0.011 0.028" pos="-0.17023911641683248 0.0553140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 162.0" />
+            <geom name="visual_0311" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 0.028001769242201345 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 171.0" />
+            <geom name="visual_0312" type="box" size="0.006 0.011 0.028" pos="-0.179 2.192117770473762e-17 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+            <geom name="visual_0313" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 -0.0280017692422013 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 189.0" />
+            <geom name="visual_0314" type="box" size="0.006 0.011 0.028" pos="-0.1702391164168325 -0.055314041993115494 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 197.99999999999997" />
+            <geom name="visual_0315" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 -0.08126429945337886 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 207.0" />
+            <geom name="visual_0316" type="box" size="0.006 0.011 0.028" pos="-0.1448140419931156 -0.10521356016035267 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 216.0" />
+            <geom name="visual_0317" type="box" size="0.006 0.011 0.028" pos="-0.12657211383239203 -0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+            <geom name="visual_0318" type="box" size="0.006 0.011 0.028" pos="-0.1052135601603527 -0.14481404199311557 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 234.0" />
+            <geom name="visual_0319" type="box" size="0.006 0.011 0.028" pos="-0.0812642994533789 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 243.0" />
+            <geom name="visual_0320" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311561 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 252.0" />
+            <geom name="visual_0321" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201355 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 261.0" />
+            <geom name="visual_0322" type="box" size="0.006 0.011 0.028" pos="-3.288176655710643e-17 -0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+            <geom name="visual_0323" type="box" size="0.006 0.011 0.028" pos="0.02800176924220129 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 279.0" />
+            <geom name="visual_0324" type="box" size="0.006 0.011 0.028" pos="0.05531404199311555 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 288.0" />
+            <geom name="visual_0325" type="box" size="0.006 0.011 0.028" pos="0.08126429945337885 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 297.0" />
+            <geom name="visual_0326" type="box" size="0.006 0.011 0.028" pos="0.10521356016035265 -0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 306.0" />
+            <geom name="visual_0327" type="box" size="0.006 0.011 0.028" pos="0.12657211383239197 -0.12657211383239203 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+            <geom name="visual_0328" type="box" size="0.006 0.011 0.028" pos="0.14481404199311557 -0.10521356016035273 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 324.0" />
+            <geom name="visual_0329" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 -0.0812642994533789 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 333.0" />
+            <geom name="visual_0330" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 -0.05531404199311563 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 342.0" />
+            <geom name="visual_0331" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 -0.02800176924220137 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 351.0" />
+          </body>
+          <inertial pos="0 0 0" mass=".05" diaginertia=".0002 .0002 .0002" />
+          <geom name="visual_0246" type="box" size="0.026 0.021 0.015" pos="0 -0.034 0.02" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+          <geom name="visual_0247" type="cylinder" size="0.017 0.023" pos="0 -0.03 -0.004" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0248" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.022 -0.026 0.015 -0.022 0 0" />
+          <geom name="visual_0249" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="0.022 -0.026 0.015 0.022 0 0" />
+          <geom name="visual_0250" type="cylinder" size="0.025 0.027" pos="0 -0.058 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0251" type="cylinder" size="0.027 0.009" pos="0 -0.025 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        </body>
+        <geom name="visual_0064" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.26 -0.008 -0.1 0.13 -0.008 -0.04" />
+        <geom name="visual_0066" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.26 0.008 -0.1 0.13 0.008 -0.04" />
+        <geom name="visual_0068" type="cylinder" size="0.025 0.011" pos="0 0.01 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        <geom name="visual_0069" type="cylinder" size="0.015 0.014" pos="0 0.015 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        <geom name="visual_0070" type="cylinder" size="0.007 0.003" pos="0 0.033 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+      </body>
+      <body name="right_rocker" pos="0 -0.105 0">
+        <joint name="right_rocker_joint" type="hinge" axis="0 1 0" limited="true" range="-50 50" />
+        <geom type="capsule" fromto="-.26 0 -.10 .13 0 -.04" size=".008" mass=".5" />
+        <body name="right_bogie" pos=".13 0 -.04">
+          <joint name="right_bogie_joint" type="hinge" axis="0 1 0" limited="true" range="-50 50" />
+          <geom type="capsule" fromto="-.13 0 -.06 .13 0 -.06" size=".008" mass=".3" />
+          <body name="right_wheel_middle_steering" pos="-0.13 -0.035 -0.06">
+            <joint name="right_wheel_middle_steering_joint" type="hinge" axis="0 0 1" range="-95 95" damping=".2" armature=".01" />
+            <body name="right_wheel_middle" pos="0 0 0" zaxis="0 1 0">
+              <joint name="right_wheel_middle_joint" type="hinge" axis="0 0 1" />
+              <geom type="cylinder" size=".18 .025" mass=".5" rgba=".075 .085 .095 1" />
+              <geom name="visual_0434" type="cylinder" size="0.108 0.003" pos="0 0 -0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0435" type="cylinder" size="0.081 0.004" pos="0 0 -0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0436" type="cylinder" size="0.031 0.007" pos="0 0 -0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0437" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0438" type="cylinder" size="0.004 0.003" pos="0.045 0.0 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0439" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0440" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0441" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0442" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0443" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0444" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0445" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0446" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0447" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0448" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0449" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0450" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0451" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0452" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0453" type="cylinder" size="0.012 0.003" pos="0 0 -0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0454" type="cylinder" size="0.108 0.003" pos="0 0 0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0455" type="cylinder" size="0.081 0.004" pos="0 0 0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0456" type="cylinder" size="0.031 0.007" pos="0 0 0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0457" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0458" type="cylinder" size="0.004 0.003" pos="0.045 0.0 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0459" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0460" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0461" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0462" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0463" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0464" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0465" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0466" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0467" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0468" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0469" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0470" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0471" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0472" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0473" type="cylinder" size="0.012 0.003" pos="0 0 0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0474" type="box" size="0.006 0.011 0.028" pos="0.179 0.0 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0475" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 0.028001769242201324 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 9.0" />
+              <geom name="visual_0476" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 0.055314041993115584 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 18.0" />
+              <geom name="visual_0477" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 0.08126429945337887 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 27.0" />
+              <geom name="visual_0478" type="box" size="0.006 0.011 0.028" pos="0.1448140419931156 0.10521356016035269 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 36.0" />
+              <geom name="visual_0479" type="box" size="0.006 0.011 0.028" pos="0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0480" type="box" size="0.006 0.011 0.028" pos="0.10521356016035269 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 54.0" />
+              <geom name="visual_0481" type="box" size="0.006 0.011 0.028" pos="0.08126429945337889 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 63.0" />
+              <geom name="visual_0482" type="box" size="0.006 0.011 0.028" pos="0.05531404199311559 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 72.0" />
+              <geom name="visual_0483" type="box" size="0.006 0.011 0.028" pos="0.028001769242201335 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 81.0" />
+              <geom name="visual_0484" type="box" size="0.006 0.011 0.028" pos="1.096058885236881e-17 0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0485" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201276 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 98.99999999999999" />
+              <geom name="visual_0486" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311557 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 108.0" />
+              <geom name="visual_0487" type="box" size="0.006 0.011 0.028" pos="-0.08126429945337886 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 117.0" />
+              <geom name="visual_0488" type="box" size="0.006 0.011 0.028" pos="-0.10521356016035267 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 126.0" />
+              <geom name="visual_0489" type="box" size="0.006 0.011 0.028" pos="-0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0490" type="box" size="0.006 0.011 0.028" pos="-0.14481404199311557 0.1052135601603527 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 144.0" />
+              <geom name="visual_0491" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 0.08126429945337889 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 153.0" />
+              <geom name="visual_0492" type="box" size="0.006 0.011 0.028" pos="-0.17023911641683248 0.0553140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 162.0" />
+              <geom name="visual_0493" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 0.028001769242201345 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 171.0" />
+              <geom name="visual_0494" type="box" size="0.006 0.011 0.028" pos="-0.179 2.192117770473762e-17 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0495" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 -0.0280017692422013 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 189.0" />
+              <geom name="visual_0496" type="box" size="0.006 0.011 0.028" pos="-0.1702391164168325 -0.055314041993115494 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 197.99999999999997" />
+              <geom name="visual_0497" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 -0.08126429945337886 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 207.0" />
+              <geom name="visual_0498" type="box" size="0.006 0.011 0.028" pos="-0.1448140419931156 -0.10521356016035267 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 216.0" />
+              <geom name="visual_0499" type="box" size="0.006 0.011 0.028" pos="-0.12657211383239203 -0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0500" type="box" size="0.006 0.011 0.028" pos="-0.1052135601603527 -0.14481404199311557 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 234.0" />
+              <geom name="visual_0501" type="box" size="0.006 0.011 0.028" pos="-0.0812642994533789 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 243.0" />
+              <geom name="visual_0502" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311561 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 252.0" />
+              <geom name="visual_0503" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201355 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 261.0" />
+              <geom name="visual_0504" type="box" size="0.006 0.011 0.028" pos="-3.288176655710643e-17 -0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0505" type="box" size="0.006 0.011 0.028" pos="0.02800176924220129 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 279.0" />
+              <geom name="visual_0506" type="box" size="0.006 0.011 0.028" pos="0.05531404199311555 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 288.0" />
+              <geom name="visual_0507" type="box" size="0.006 0.011 0.028" pos="0.08126429945337885 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 297.0" />
+              <geom name="visual_0508" type="box" size="0.006 0.011 0.028" pos="0.10521356016035265 -0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 306.0" />
+              <geom name="visual_0509" type="box" size="0.006 0.011 0.028" pos="0.12657211383239197 -0.12657211383239203 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0510" type="box" size="0.006 0.011 0.028" pos="0.14481404199311557 -0.10521356016035273 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 324.0" />
+              <geom name="visual_0511" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 -0.0812642994533789 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 333.0" />
+              <geom name="visual_0512" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 -0.05531404199311563 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 342.0" />
+              <geom name="visual_0513" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 -0.02800176924220137 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 351.0" />
+            </body>
+            <inertial pos="0 0 0" mass=".05" diaginertia=".0002 .0002 .0002" />
+            <geom name="visual_0428" type="box" size="0.026 0.021 0.015" pos="0 0.034 0.02" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0429" type="cylinder" size="0.017 0.023" pos="0 0.03 -0.004" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0430" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.022 0.026 0.015 -0.022 0 0" />
+            <geom name="visual_0431" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="0.022 0.026 0.015 0.022 0 0" />
+            <geom name="visual_0432" type="cylinder" size="0.025 0.027" pos="0 0.058 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0433" type="cylinder" size="0.027 0.009" pos="0 0.025 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          </body>
+          <body name="right_wheel_front_steering" pos="0.13 -0.135 -0.06">
+            <joint name="right_wheel_front_steering_joint" type="hinge" axis="0 0 1" range="-95 95" damping=".2" armature=".01" />
+            <body name="right_wheel_front" pos="0 0 0" zaxis="0 1 0">
+              <joint name="right_wheel_front_joint" type="hinge" axis="0 0 1" />
+              <geom type="cylinder" size=".18 .025" mass=".5" rgba=".075 .085 .095 1" />
+              <geom name="visual_0348" type="cylinder" size="0.108 0.003" pos="0 0 -0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0349" type="cylinder" size="0.081 0.004" pos="0 0 -0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0350" type="cylinder" size="0.031 0.007" pos="0 0 -0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0351" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0352" type="cylinder" size="0.004 0.003" pos="0.045 0.0 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0353" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0354" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0355" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0356" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0357" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0358" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0359" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0360" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0361" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0362" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0363" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0364" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0365" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0366" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0367" type="cylinder" size="0.012 0.003" pos="0 0 -0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0368" type="cylinder" size="0.108 0.003" pos="0 0 0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0369" type="cylinder" size="0.081 0.004" pos="0 0 0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0370" type="cylinder" size="0.031 0.007" pos="0 0 0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+              <geom name="visual_0371" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0372" type="cylinder" size="0.004 0.003" pos="0.045 0.0 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0373" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0374" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0375" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0376" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0377" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0378" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0379" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0380" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0381" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0382" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0383" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0384" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0385" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0386" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0387" type="cylinder" size="0.012 0.003" pos="0 0 0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+              <geom name="visual_0388" type="box" size="0.006 0.011 0.028" pos="0.179 0.0 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+              <geom name="visual_0389" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 0.028001769242201324 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 9.0" />
+              <geom name="visual_0390" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 0.055314041993115584 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 18.0" />
+              <geom name="visual_0391" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 0.08126429945337887 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 27.0" />
+              <geom name="visual_0392" type="box" size="0.006 0.011 0.028" pos="0.1448140419931156 0.10521356016035269 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 36.0" />
+              <geom name="visual_0393" type="box" size="0.006 0.011 0.028" pos="0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+              <geom name="visual_0394" type="box" size="0.006 0.011 0.028" pos="0.10521356016035269 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 54.0" />
+              <geom name="visual_0395" type="box" size="0.006 0.011 0.028" pos="0.08126429945337889 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 63.0" />
+              <geom name="visual_0396" type="box" size="0.006 0.011 0.028" pos="0.05531404199311559 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 72.0" />
+              <geom name="visual_0397" type="box" size="0.006 0.011 0.028" pos="0.028001769242201335 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 81.0" />
+              <geom name="visual_0398" type="box" size="0.006 0.011 0.028" pos="1.096058885236881e-17 0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+              <geom name="visual_0399" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201276 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 98.99999999999999" />
+              <geom name="visual_0400" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311557 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 108.0" />
+              <geom name="visual_0401" type="box" size="0.006 0.011 0.028" pos="-0.08126429945337886 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 117.0" />
+              <geom name="visual_0402" type="box" size="0.006 0.011 0.028" pos="-0.10521356016035267 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 126.0" />
+              <geom name="visual_0403" type="box" size="0.006 0.011 0.028" pos="-0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+              <geom name="visual_0404" type="box" size="0.006 0.011 0.028" pos="-0.14481404199311557 0.1052135601603527 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 144.0" />
+              <geom name="visual_0405" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 0.08126429945337889 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 153.0" />
+              <geom name="visual_0406" type="box" size="0.006 0.011 0.028" pos="-0.17023911641683248 0.0553140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 162.0" />
+              <geom name="visual_0407" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 0.028001769242201345 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 171.0" />
+              <geom name="visual_0408" type="box" size="0.006 0.011 0.028" pos="-0.179 2.192117770473762e-17 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+              <geom name="visual_0409" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 -0.0280017692422013 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 189.0" />
+              <geom name="visual_0410" type="box" size="0.006 0.011 0.028" pos="-0.1702391164168325 -0.055314041993115494 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 197.99999999999997" />
+              <geom name="visual_0411" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 -0.08126429945337886 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 207.0" />
+              <geom name="visual_0412" type="box" size="0.006 0.011 0.028" pos="-0.1448140419931156 -0.10521356016035267 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 216.0" />
+              <geom name="visual_0413" type="box" size="0.006 0.011 0.028" pos="-0.12657211383239203 -0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+              <geom name="visual_0414" type="box" size="0.006 0.011 0.028" pos="-0.1052135601603527 -0.14481404199311557 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 234.0" />
+              <geom name="visual_0415" type="box" size="0.006 0.011 0.028" pos="-0.0812642994533789 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 243.0" />
+              <geom name="visual_0416" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311561 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 252.0" />
+              <geom name="visual_0417" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201355 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 261.0" />
+              <geom name="visual_0418" type="box" size="0.006 0.011 0.028" pos="-3.288176655710643e-17 -0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+              <geom name="visual_0419" type="box" size="0.006 0.011 0.028" pos="0.02800176924220129 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 279.0" />
+              <geom name="visual_0420" type="box" size="0.006 0.011 0.028" pos="0.05531404199311555 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 288.0" />
+              <geom name="visual_0421" type="box" size="0.006 0.011 0.028" pos="0.08126429945337885 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 297.0" />
+              <geom name="visual_0422" type="box" size="0.006 0.011 0.028" pos="0.10521356016035265 -0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 306.0" />
+              <geom name="visual_0423" type="box" size="0.006 0.011 0.028" pos="0.12657211383239197 -0.12657211383239203 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+              <geom name="visual_0424" type="box" size="0.006 0.011 0.028" pos="0.14481404199311557 -0.10521356016035273 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 324.0" />
+              <geom name="visual_0425" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 -0.0812642994533789 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 333.0" />
+              <geom name="visual_0426" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 -0.05531404199311563 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 342.0" />
+              <geom name="visual_0427" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 -0.02800176924220137 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 351.0" />
+            </body>
+            <inertial pos="0 0 0" mass=".05" diaginertia=".0002 .0002 .0002" />
+            <geom name="visual_0342" type="box" size="0.026 0.021 0.015" pos="0 0.034 0.02" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0343" type="cylinder" size="0.017 0.023" pos="0 0.03 -0.004" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0344" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.022 0.026 0.015 -0.022 0 0" />
+            <geom name="visual_0345" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="0.022 0.026 0.015 0.022 0 0" />
+            <geom name="visual_0346" type="cylinder" size="0.025 0.027" pos="0 0.058 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+            <geom name="visual_0347" type="cylinder" size="0.027 0.009" pos="0 0.025 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          </body>
+          <geom name="visual_0333" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.13 -0.008 -0.06 0.13 -0.008 -0.06" />
+          <geom name="visual_0335" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.13 0.008 -0.06 0.13 0.008 -0.06" />
+          <geom name="visual_0339" type="cylinder" size="0.025 0.011" pos="0 -0.01 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0340" type="cylinder" size="0.015 0.014" pos="0 -0.015 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0341" type="cylinder" size="0.007 0.003" pos="0 -0.033 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        </body>
+        <body name="right_wheel_rear_steering" pos="-0.26 -0.135 -0.1">
+          <joint name="right_wheel_rear_steering_joint" type="hinge" axis="0 0 1" range="-95 95" damping=".2" armature=".01" />
+          <body name="right_wheel_rear" pos="0 0 0" zaxis="0 1 0">
+            <joint name="right_wheel_rear_joint" type="hinge" axis="0 0 1" />
+            <geom type="cylinder" size=".18 .025" mass=".5" rgba=".075 .085 .095 1" />
+            <geom name="visual_0520" type="cylinder" size="0.108 0.003" pos="0 0 -0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0521" type="cylinder" size="0.081 0.004" pos="0 0 -0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0522" type="cylinder" size="0.031 0.007" pos="0 0 -0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0523" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+            <geom name="visual_0524" type="cylinder" size="0.004 0.003" pos="0.045 0.0 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0525" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+            <geom name="visual_0526" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0527" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+            <geom name="visual_0528" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0529" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+            <geom name="visual_0530" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0531" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+            <geom name="visual_0532" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0533" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+            <geom name="visual_0534" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0535" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+            <geom name="visual_0536" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0537" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 -0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+            <geom name="visual_0538" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 -0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0539" type="cylinder" size="0.012 0.003" pos="0 0 -0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0540" type="cylinder" size="0.108 0.003" pos="0 0 0.027" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0541" type="cylinder" size="0.081 0.004" pos="0 0 0.031" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0542" type="cylinder" size="0.031 0.007" pos="0 0 0.035" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+            <geom name="visual_0543" type="box" size="0.031 0.008 0.004" pos="0.061 0.0 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+            <geom name="visual_0544" type="cylinder" size="0.004 0.003" pos="0.045 0.0 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0545" type="box" size="0.031 0.008 0.004" pos="0.0431335136523794 0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+            <geom name="visual_0546" type="cylinder" size="0.004 0.003" pos="0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0547" type="box" size="0.031 0.008 0.004" pos="3.7351727373994275e-18 0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+            <geom name="visual_0548" type="cylinder" size="0.004 0.003" pos="2.7554552980815448e-18 0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0549" type="box" size="0.031 0.008 0.004" pos="-0.04313351365237939 0.0431335136523794 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+            <geom name="visual_0550" type="cylinder" size="0.004 0.003" pos="-0.03181980515339464 0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0551" type="box" size="0.031 0.008 0.004" pos="-0.061 7.470345474798855e-18 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+            <geom name="visual_0552" type="cylinder" size="0.004 0.003" pos="-0.045 5.5109105961630896e-18 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0553" type="box" size="0.031 0.008 0.004" pos="-0.043133513652379406 -0.04313351365237939 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+            <geom name="visual_0554" type="cylinder" size="0.004 0.003" pos="-0.031819805153394644 -0.03181980515339464 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0555" type="box" size="0.031 0.008 0.004" pos="-1.120551821219828e-17 -0.061 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+            <geom name="visual_0556" type="cylinder" size="0.004 0.003" pos="-8.266365894244633e-18 -0.045 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0557" type="box" size="0.031 0.008 0.004" pos="0.043133513652379385 -0.043133513652379406 0.035" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+            <geom name="visual_0558" type="cylinder" size="0.004 0.003" pos="0.03181980515339463 -0.031819805153394644 0.041999999999999996" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0559" type="cylinder" size="0.012 0.003" pos="0 0 0.047" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+            <geom name="visual_0560" type="box" size="0.006 0.011 0.028" pos="0.179 0.0 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 0.0" />
+            <geom name="visual_0561" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 0.028001769242201324 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 9.0" />
+            <geom name="visual_0562" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 0.055314041993115584 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 18.0" />
+            <geom name="visual_0563" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 0.08126429945337887 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 27.0" />
+            <geom name="visual_0564" type="box" size="0.006 0.011 0.028" pos="0.1448140419931156 0.10521356016035269 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 36.0" />
+            <geom name="visual_0565" type="box" size="0.006 0.011 0.028" pos="0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 45.0" />
+            <geom name="visual_0566" type="box" size="0.006 0.011 0.028" pos="0.10521356016035269 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 54.0" />
+            <geom name="visual_0567" type="box" size="0.006 0.011 0.028" pos="0.08126429945337889 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 63.0" />
+            <geom name="visual_0568" type="box" size="0.006 0.011 0.028" pos="0.05531404199311559 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 72.0" />
+            <geom name="visual_0569" type="box" size="0.006 0.011 0.028" pos="0.028001769242201335 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 81.0" />
+            <geom name="visual_0570" type="box" size="0.006 0.011 0.028" pos="1.096058885236881e-17 0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 90.0" />
+            <geom name="visual_0571" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201276 0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 98.99999999999999" />
+            <geom name="visual_0572" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311557 0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 108.0" />
+            <geom name="visual_0573" type="box" size="0.006 0.011 0.028" pos="-0.08126429945337886 0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 117.0" />
+            <geom name="visual_0574" type="box" size="0.006 0.011 0.028" pos="-0.10521356016035267 0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 126.0" />
+            <geom name="visual_0575" type="box" size="0.006 0.011 0.028" pos="-0.126572113832392 0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 135.0" />
+            <geom name="visual_0576" type="box" size="0.006 0.011 0.028" pos="-0.14481404199311557 0.1052135601603527 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 144.0" />
+            <geom name="visual_0577" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 0.08126429945337889 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 153.0" />
+            <geom name="visual_0578" type="box" size="0.006 0.011 0.028" pos="-0.17023911641683248 0.0553140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 162.0" />
+            <geom name="visual_0579" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 0.028001769242201345 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 171.0" />
+            <geom name="visual_0580" type="box" size="0.006 0.011 0.028" pos="-0.179 2.192117770473762e-17 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 180.0" />
+            <geom name="visual_0581" type="box" size="0.006 0.011 0.028" pos="-0.17679621296652964 -0.0280017692422013 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 189.0" />
+            <geom name="visual_0582" type="box" size="0.006 0.011 0.028" pos="-0.1702391164168325 -0.055314041993115494 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 197.99999999999997" />
+            <geom name="visual_0583" type="box" size="0.006 0.011 0.028" pos="-0.15949016782971784 -0.08126429945337886 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 207.0" />
+            <geom name="visual_0584" type="box" size="0.006 0.011 0.028" pos="-0.1448140419931156 -0.10521356016035267 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 216.0" />
+            <geom name="visual_0585" type="box" size="0.006 0.011 0.028" pos="-0.12657211383239203 -0.126572113832392 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 225.0" />
+            <geom name="visual_0586" type="box" size="0.006 0.011 0.028" pos="-0.1052135601603527 -0.14481404199311557 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 234.0" />
+            <geom name="visual_0587" type="box" size="0.006 0.011 0.028" pos="-0.0812642994533789 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 243.0" />
+            <geom name="visual_0588" type="box" size="0.006 0.011 0.028" pos="-0.05531404199311561 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 252.0" />
+            <geom name="visual_0589" type="box" size="0.006 0.011 0.028" pos="-0.028001769242201355 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 261.0" />
+            <geom name="visual_0590" type="box" size="0.006 0.011 0.028" pos="-3.288176655710643e-17 -0.179 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 270.0" />
+            <geom name="visual_0591" type="box" size="0.006 0.011 0.028" pos="0.02800176924220129 -0.17679621296652964 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 279.0" />
+            <geom name="visual_0592" type="box" size="0.006 0.011 0.028" pos="0.05531404199311555 -0.17023911641683248 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 288.0" />
+            <geom name="visual_0593" type="box" size="0.006 0.011 0.028" pos="0.08126429945337885 -0.15949016782971784 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 297.0" />
+            <geom name="visual_0594" type="box" size="0.006 0.011 0.028" pos="0.10521356016035265 -0.1448140419931156 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 306.0" />
+            <geom name="visual_0595" type="box" size="0.006 0.011 0.028" pos="0.12657211383239197 -0.12657211383239203 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 315.0" />
+            <geom name="visual_0596" type="box" size="0.006 0.011 0.028" pos="0.14481404199311557 -0.10521356016035273 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 324.0" />
+            <geom name="visual_0597" type="box" size="0.006 0.011 0.028" pos="0.15949016782971784 -0.0812642994533789 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 333.0" />
+            <geom name="visual_0598" type="box" size="0.006 0.011 0.028" pos="0.17023911641683248 -0.05531404199311563 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 342.0" />
+            <geom name="visual_0599" type="box" size="0.006 0.011 0.028" pos="0.17679621296652964 -0.02800176924220137 0" material="v_rubber" mass="0" contype="0" conaffinity="0" group="2" euler="0 0 351.0" />
+          </body>
+          <inertial pos="0 0 0" mass=".05" diaginertia=".0002 .0002 .0002" />
+          <geom name="visual_0514" type="box" size="0.026 0.021 0.015" pos="0 0.034 0.02" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+          <geom name="visual_0515" type="cylinder" size="0.017 0.023" pos="0 0.03 -0.004" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0516" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.022 0.026 0.015 -0.022 0 0" />
+          <geom name="visual_0517" type="capsule" size="0.005" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="0.022 0.026 0.015 0.022 0 0" />
+          <geom name="visual_0518" type="cylinder" size="0.025 0.027" pos="0 0.058 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+          <geom name="visual_0519" type="cylinder" size="0.027 0.009" pos="0 0.025 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        </body>
+        <geom name="visual_0332" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.26 -0.008 -0.1 0.13 -0.008 -0.04" />
+        <geom name="visual_0334" type="capsule" size="0.009" pos="0 0 0" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.26 0.008 -0.1 0.13 0.008 -0.04" />
+        <geom name="visual_0336" type="cylinder" size="0.025 0.011" pos="0 -0.01 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        <geom name="visual_0337" type="cylinder" size="0.015 0.014" pos="0 -0.015 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+        <geom name="visual_0338" type="cylinder" size="0.007 0.003" pos="0 -0.033 0" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 1 0" />
+      </body>
+      <geom name="visual_0001" type="box" size="0.19 0.012 0.012" pos="-0.01 -0.102 -0.028" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0002" type="box" size="0.19 0.012 0.012" pos="-0.01 0.102 -0.028" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0003" type="box" size="0.012 0.11 0.012" pos="-0.17 0 -0.028" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0004" type="box" size="0.012 0.11 0.012" pos="-0.02 0 -0.028" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0005" type="box" size="0.012 0.11 0.012" pos="0.15 0 -0.028" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0006" type="box" size="0.19 0.11 0.004" pos="-0.01 0 -0.045" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0007" type="cylinder" size="0.006 0.003" pos="-0.17 -0.102 -0.012" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0008" type="cylinder" size="0.006 0.003" pos="-0.17 0.102 -0.012" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0009" type="cylinder" size="0.006 0.003" pos="0.15 -0.102 -0.012" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0010" type="cylinder" size="0.006 0.003" pos="0.15 0.102 -0.012" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0011" type="box" size="0.16 0.018 0.006" pos="-0.01 -0.09 0.025" material="v_blue" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0012" type="cylinder" size="0.004 0.003" pos="-0.15 -0.09 0.034" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0013" type="cylinder" size="0.004 0.003" pos="0.12 -0.09 0.034" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0014" type="box" size="0.16 0.018 0.006" pos="-0.01 0.09 0.025" material="v_blue" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0015" type="cylinder" size="0.004 0.003" pos="-0.15 0.09 0.034" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0016" type="cylinder" size="0.004 0.003" pos="0.12 0.09 0.034" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" zaxis="0 0 1" />
+      <geom name="visual_0017" type="box" size="0.055 0.062 0.025" pos="-0.115 0 -0.002" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0018" type="box" size="0.006 0.065 0.004" pos="-0.14 0 0.027" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0019" type="box" size="0.006 0.065 0.004" pos="-0.09 0 0.027" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0020" type="box" size="0.042 0.057 0.004" pos="0.012 0 0.004" material="v_pcb" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0021" type="cylinder" size="0.003 0.012" pos="-0.02 -0.045 -0.006" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0022" type="cylinder" size="0.003 0.012" pos="-0.02 0.045 -0.006" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0023" type="cylinder" size="0.003 0.012" pos="0.042 -0.045 -0.006" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0024" type="cylinder" size="0.003 0.012" pos="0.042 0.045 -0.006" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0025" type="box" size="0.009 0.018 0.006" pos="0.002 -0.015 0.013" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0026" type="box" size="0.009 0.018 0.006" pos="0.015 -0.015 0.013" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0027" type="box" size="0.009 0.018 0.006" pos="0.027999999999999997 -0.015 0.013" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0028" type="box" size="0.009 0.018 0.006" pos="0.041 -0.015 0.013" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0029" type="box" size="0.002 0.004 0.003" pos="0.006 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0030" type="box" size="0.002 0.004 0.003" pos="0.011 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0031" type="box" size="0.002 0.004 0.003" pos="0.016 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0032" type="box" size="0.002 0.004 0.003" pos="0.020999999999999998 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0033" type="box" size="0.002 0.004 0.003" pos="0.026000000000000002 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0034" type="box" size="0.002 0.004 0.003" pos="0.031 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0035" type="box" size="0.002 0.004 0.003" pos="0.036 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0036" type="box" size="0.002 0.004 0.003" pos="0.041 0.04 0.011" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0037" type="box" size="0.027 0.045 0.018" pos="0.108 0 0.001" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0038" type="box" size="0.013 0.009 0.004" pos="0.108 -0.027 0.024" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0039" type="box" size="0.013 0.009 0.004" pos="0.108 0 0.024" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0040" type="box" size="0.013 0.009 0.004" pos="0.108 0.027 0.024" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0041" type="capsule" size="0.0025" pos="0 0 0" material="v_wire" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.1 -0.06 0.015 -0.07 -0.075 0.02" />
+      <geom name="visual_0042" type="capsule" size="0.0025" pos="0 0 0" material="v_wire" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.07 -0.075 0.02 0.07 -0.075 0.025" />
+      <geom name="visual_0043" type="capsule" size="0.0025" pos="0 0 0" material="v_wire" mass="0" contype="0" conaffinity="0" group="2" fromto="0.07 -0.075 0.025 0.12 -0.045 0.025" />
+      <geom name="visual_0044" type="box" size="0.004 0.006 0.004" pos="-0.06 -0.075 0.025" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0045" type="box" size="0.004 0.006 0.004" pos="0.02 -0.075 0.025" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0046" type="box" size="0.004 0.006 0.004" pos="0.08 -0.075 0.025" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0047" type="capsule" size="0.0025" pos="0 0 0" material="v_red" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.1 0.06 0.015 -0.07 0.075 0.02" />
+      <geom name="visual_0048" type="capsule" size="0.0025" pos="0 0 0" material="v_red" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.07 0.075 0.02 0.07 0.075 0.025" />
+      <geom name="visual_0049" type="capsule" size="0.0025" pos="0 0 0" material="v_red" mass="0" contype="0" conaffinity="0" group="2" fromto="0.07 0.075 0.025 0.12 0.045 0.025" />
+      <geom name="visual_0050" type="box" size="0.004 0.006 0.004" pos="-0.06 0.075 0.025" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0051" type="box" size="0.004 0.006 0.004" pos="0.02 0.075 0.025" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0052" type="box" size="0.004 0.006 0.004" pos="0.08 0.075 0.025" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0053" type="capsule" size="0.01" pos="0 0 0" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" fromto="0.185 -0.11 -0.012 0.185 0.11 -0.012" />
+      <geom name="visual_0054" type="sphere" size="0.008" pos="0.191 -0.08 0.008" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0055" type="sphere" size="0.008" pos="0.191 0.08 0.008" material="v_orange" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0056" type="cylinder" size="0.008 0.035" pos="0.04 0 0.053" material="v_metal" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0057" type="cylinder" size="0.034 0.014" pos="0.04 0 0.097" material="v_dark" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0058" type="cylinder" size="0.035 0.003" pos="0.04 0 0.111" material="v_blue" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0059" type="cylinder" size="0.036 0.002" pos="0.04 0 0.087" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0060" type="capsule" size="0.002" pos="0 0 0" material="v_wire" mass="0" contype="0" conaffinity="0" group="2" fromto="-0.18 -0.07 0.025 -0.18 -0.07 0.17" />
+      <geom name="visual_0061" type="box" size="0.01 0.003 0.001" pos="-0.03 0.111 0.012" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0062" type="box" size="0.01 0.003 0.001" pos="-0.0049999999999999975 0.111 0.012" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+      <geom name="visual_0063" type="box" size="0.01 0.003 0.001" pos="0.020000000000000004 0.111 0.012" material="v_silver" mass="0" contype="0" conaffinity="0" group="2" />
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="passive_differential" joint1="left_rocker_joint" joint2="right_rocker_joint" polycoef="0 -1 0 0 0" solref=".02 1" />
+  </equality>
+  <contact>
+    <exclude body1="left_rocker" body2="left_wheel_middle" />
+    <exclude body1="left_bogie" body2="left_wheel_middle" />
+    <exclude body1="right_rocker" body2="right_wheel_middle" />
+    <exclude body1="right_bogie" body2="right_wheel_middle" />
+  </contact>
+  <asset>
+    <material name="v_metal" rgba=".48 .55 .62 1" specular=".4" shininess=".35" />
+    <material name="v_dark" rgba=".055 .07 .09 1" specular=".15" shininess=".35" />
+    <material name="v_blue" rgba=".04 .34 .63 1" specular=".15" shininess=".35" />
+    <material name="v_orange" rgba=".95 .44 .07 1" specular=".15" shininess=".35" />
+    <material name="v_silver" rgba=".72 .77 .8 1" specular=".4" shininess=".35" />
+    <material name="v_rubber" rgba=".12 .135 .15 1" specular=".15" shininess=".35" />
+    <material name="v_pcb" rgba=".02 .27 .16 1" specular=".15" shininess=".35" />
+    <material name="v_red" rgba=".7 .045 .035 1" specular=".15" shininess=".35" />
+    <material name="v_wire" rgba=".05 .06 .07 1" specular=".15" shininess=".35" />
+  </asset>
+</mujoco>

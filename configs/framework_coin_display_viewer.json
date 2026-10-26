@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "simulation": {
+    "scenario": "scenarios/passive_front_bogie_r18_steering_flat.json",
+    "torque_limit": 6,
+    "show_coins": true,
+    "camera": {
+      "camera_pos": [
+        1.4,
+        -2.2,
+        2.0
+      ],
+      "camera_lookat": [
+        0.4,
+        0.25,
+        0.1
+      ],
+      "camera_fov": 45
+    }
+  },
+  "competition": {
+    "time_limit": 30,
+    "participants": [
+      "self"
+    ],
+    "coins": [
+      {
+        "id": 0,
+        "pos": [
+          0,
+          0,
+          0.005
+        ],
+        "tier": 3,
+        "dwell": 0.2,
+        "respawn_delay": 1
+      },
+      {
+        "id": 1,
+        "pos": [
+          0.6,
+          0,
+          0.005
+        ],
+        "tier": 3,
+        "dwell": 1.5,
+        "spawn_at": 2,
+        "respawn_delay": 3
+      },
+      {
+        "id": 2,
+        "pos": [
+          0.6,
+          0.6,
+          0.005
+        ],
+        "tier": 3,
+        "spawn_at": 4
+      }
+    ]
+  },
+  "agents": {
+    "self": {
+      "coin_ids": [
+        0,
+        1
+      ],
+      "max_speed": 0.12,
+      "max_turn": 0.3
+    }
+  },
+  "dt": 0.01
+}

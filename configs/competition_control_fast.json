@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "simulation": {
+    "scenario": "scenarios/passive_front_bogie_r18_steering_tiers.json",
+    "torque_limit": 6,
+    "spawns": {
+      "self": {
+        "pos": [
+          -6.1,
+          1,
+          0.65
+        ],
+        "euler": [
+          0,
+          0,
+          350.690059825014
+        ]
+      },
+      "opponent": {
+        "pos": [
+          -6.1,
+          -1,
+          0.65
+        ],
+        "euler": [
+          0,
+          0,
+          9.309940174986025
+        ]
+      }
+    },
+    "climb_assist": true,
+    "show_coins": true
+  },
+  "competition": {
+    "time_limit": 120,
+    "participants": [
+      "self",
+      "opponent"
+    ],
+    "coins": [
+      {
+        "id": 0,
+        "pos": [
+          0.0,
+          4.0,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 1,
+        "pos": [
+          -1.530734,
+          3.695518,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 2,
+        "pos": [
+          -2.828427,
+          2.828427,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 3,
+        "pos": [
+          -3.695518,
+          1.530734,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 4,
+        "pos": [
+          -4.0,
+          0.0,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 5,
+        "pos": [
+          -3.695518,
+          -1.530734,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 6,
+        "pos": [
+          -2.828427,
+          -2.828427,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 7,
+        "pos": [
+          -1.530734,
+          -3.695518,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 8,
+        "pos": [
+          -0.0,
+          -4.0,
+          0.10500000000000001
+        ],
+        "tier": 3,
+        "points": 1,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 9,
+        "pos": [
+          0.0,
+          2.6,
+          0.355
+        ],
+        "tier": 2,
+        "points": 2,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 10,
+        "pos": [
+          -1.3,
+          2.251666,
+          0.355
+        ],
+        "tier": 2,
+        "points": 2,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 11,
+        "pos": [
+          -2.251666,
+          1.3,
+          0.355
+        ],
+        "tier": 2,
+        "points": 2,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 12,
+        "pos": [
+          -2.6,
+          0.0,
+          0.355
+        ],
+        "tier": 2,
+        "points": 2,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 13,
+        "pos": [
+          -2.251666,
+          -1.3,
+          0.355
+        ],
+        "tier": 2,
+        "points": 2,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 14,
+        "pos": [
+          -1.3,
+          -2.251666,
+          0.355
+        ],
+        "tier": 2,
+        "points": 2,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 15,
+        "pos": [
+          -0.0,
+          -2.6,
+          0.355
+        ],
+        "tier": 2,
+        "points": 2,
+        "dwell": 0,
+        "spawn_at": 0
+      },
+      {
+        "id": 16,
+        "pos": [
+          0.0,
+          0.95,
+          0.605
+        ],
+        "tier": 1,
+        "points": 5,
+        "dwell": 2,
+        "spawn_at": 0
+      },
+      {
+        "id": 17,
+        "pos": [
+          -0.0,
+          -0.95,
+          0.605
+        ],
+        "tier": 1,
+        "points": 5,
+        "dwell": 2,
+        "spawn_at": 0
+      }
+    ],
+    "recovery": {
+      "enabled": true,
+      "timeout": 20,
+      "min_distance": 0.05,
+      "min_rotation": 0.15
+    }
+  },
+  "agents": {
+    "self": {
+      "kind": "tier",
+      "tier_coin_ids": [
+        [
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          12,
+          11,
+          10,
+          9
+        ],
+        [
+          16
+        ]
+      ],
+      "gate_angles": [
+        2.97910354437259,
+        2.792526803190927,
+        1.5707963267948966
+      ],
+      "max_speed": 0.12,
+      "max_turn": 0.3,
+      "control_profile": "fast"
+    },
+    "opponent": {
+      "kind": "tier",
+      "tier_coin_ids": [
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          13,
+          14,
+          15
+        ],
+        [
+          17
+        ]
+      ],
+      "gate_angles": [
+        -2.97910354437259,
+        3.490658503988659,
+        -1.5707963267948966
+      ],
+      "max_speed": 0.12,
+      "max_turn": 0.3,
+      "control_profile": "fast"
+    }
+  },
+  "dt": 0.01,
+  "layout_provenance": {
+    "source": "user supplied photograph",
+    "method": "approximate left semicircle, normalized to existing field dimensions",
+    "visible_coin_counts": {
+      "tier3": 9,
+      "tier2": 7,
+      "tier1": 2
+    },
+    "uncertain": [
+      "exact positions and dimensions",
+      "spawn schedule",
+      "official scoring and time limit"
+    ],
+    "all_spots_available_at_start": true
+  }
+}
